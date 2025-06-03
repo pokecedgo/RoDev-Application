@@ -1,0 +1,1 @@
+So you can see routes folder was created.
