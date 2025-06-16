@@ -37,6 +37,10 @@ async function loginUser(username, password) {
 
 //Update a user
 
+/* Dev note
+    Case1 is for logged in recovery, however, case2 in the future needs to be tested for the email recovery to work
+*/
+
 //Password Update Case 1: Already logged in user
 async function updatePassword(id, password) {
      //user must be logged in to update password (no email method yet)
@@ -83,8 +87,8 @@ async function getUser(username) {
 }
 
 //Read a user
-function login(username, password) {
-    const user = User.findOne({ "username": username})
+async function login(username, password) {
+    const user = await User.findOne({ "username": username})
     
     if(!user) throw Error('User not found');
     if(user.password !== password) throw Error('Wrong password!');
