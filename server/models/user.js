@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 //schema entity {Must have username, password and email} email in case of password recovery feature in future
 const userSchema = new mongoose.Schema({
@@ -19,21 +20,33 @@ async function register(username, password, email) {
 
     if(user) throw Error('Username already exists!');
 
+    const salt  = await bcrypt.genSalt(10);
+    const hashed = await bcrypt.hash(password, salt);
+    
+
     const newUser = await User.create({
         username: username,
-        password: password,
+        password: hashed,
         email: email,
     });
 
-    return newUser;
+    return newUser._doc;
 }   
 
-async function loginUser(username, password) {
-    const user = await getUser(username);
+//Read a user
+async function login(username, password) {
+    const user = await User.findOne({ "username": username})
+    
+    const isMatch = await bcrypt.compare(password, user.password);
+
+
     if(!user) throw Error('User not found');
-    if(user.password !== password) throw Error('Wrong password!');
-    return user;
+    if(!isMatch) throw Error('Wrong password!');
+
+    return user._doc;
 }
+
+
 
 //Update a user
 
@@ -84,16 +97,6 @@ async function deleteUser(id) {
 //Utility functions
 async function getUser(username) {
    return await User.findOne({ "username": username }); 
-}
-
-//Read a user
-async function login(username, password) {
-    const user = await User.findOne({ "username": username})
-    
-    if(!user) throw Error('User not found');
-    if(user.password !== password) throw Error('Wrong password!');
-
-    return user;
 }
 
 
