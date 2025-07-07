@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/Common.css";
+import bannerImage from '../../assets/HomePageBanner.png'; 
+
+const bannerStyle = {
+  backgroundImage: `url(${bannerImage})`
+};
 
 const ViewPost = () => {
  
@@ -153,15 +158,17 @@ const ViewPost = () => {
   return (
     <>
       {}
-      <div className="page-banner">
+      <div className="banner-container" style={bannerStyle}>
         <div className="banner-overlay">
           <div className="container">
             <div className="banner-content">
-              {}
+             
             </div>
           </div>
         </div>
       </div>
+
+      {}
 
       <div className="container mt-5">
         {/* Back Button */}

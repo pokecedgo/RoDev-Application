@@ -61,7 +61,7 @@ const Home = () => {
 
   return (
     <>
-      {/* Banner with inline style using imported image */}
+      {}
       <div className="banner-container" style={bannerStyle}>
         <div className="banner-overlay">
           <div className="container">
@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Rest of content */}
+      {}
       <div className="container mt-5">
         <div className="row mb-4">
           <div className="col-md-6">
