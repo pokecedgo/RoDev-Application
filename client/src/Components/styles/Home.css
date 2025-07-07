@@ -1,0 +1,58 @@
+.banner-container {
+  height: 310px;
+  width: 100%;
+  
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: -10px; 
+}
+
+
+.banner-content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.banner-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    height: 350px; 
+  }
+  
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .banner-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-container {
+    height: 200px; 
+  }
+  
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+  
+  .banner-content p {
+    font-size: 1rem;
+  }
+}

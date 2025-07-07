@@ -104,9 +104,8 @@ async function getUser(username) {
 // Exporting the functions
 module.exports = {
     register,
-    loginUser,
+    login,
     updatePassword,
     updatePasswordByEmail,
-    deleteUser,
-    login
+    deleteUser
 };

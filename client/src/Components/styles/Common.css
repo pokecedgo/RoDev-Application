@@ -1,0 +1,58 @@
+.page-banner {
+  height: 310px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: -10px;
+}
+
+
+.profile-banner {
+  background-image: url('../../assets/ProfilePageBanner.png');
+}
+
+.register-banner {
+  background-image: url('../../assets/RegisterPageBanner.png');
+}
+
+.login-banner {
+  background-image: url('../../assets/LoginPageBanner.png');
+}
+
+.create-post-banner {
+  background-image: url('../../assets/CreatePostPageBanner.png');
+}
+
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 600px;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-banner {
+    height: 200px;
+  }
+}

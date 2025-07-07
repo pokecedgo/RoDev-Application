@@ -26,6 +26,11 @@ async function getAllPosts() {
     return await Post.find().populate('userId').populate('categoryId');
 }
 
+async function getUserPosts(userId) {
+    return await Post.find({ userId }).populate('userId').populate('categoryId');
+}
+
+
 async function getPostById(postId) {
     return await Post.findById(postId).populate('userId').populate('categoryId');
 }
@@ -45,5 +50,6 @@ module.exports = {
     getAllPosts,
     getPostById,
     updatePost,
-    deletePost
+    deletePost,
+    getUserPosts
 };

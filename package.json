@@ -1,21 +1,22 @@
 {
-  "name": "rodev-application",
+  "name": "project_sum25",
   "version": "1.0.0",
-  "description": "RoDev - Developers for Developers",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "npm start --prefix client"
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Cedric Petilos",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongodb": "^6.17.0",
-    "mongoose": "^8.15.2",
-    "react-router-dom": "^7.6.3"
+    "mongoose": "^8.15.2"
   },
   "devDependencies": {
     "concurrently": "^9.2.0",

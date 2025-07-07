@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar.js';
-import Register from './Components/Register.js';
-import Login from './Components/Login.js';
-import Home from './Components/Home.js';
-import CreatePost from './Components/CreatePost.js';
-import Profile from './Components/Profile.js';
-import ViewPost from './Components/ViewPost.js';
+import Navbar from './Components/pages/Navbar.js';
+import Register from './Components/pages/Register.js';
+import Login from './Components/pages/Login.js';
+import Home from './Components/pages/Home.js';
+import CreatePost from './Components/pages/CreatePost.js';
+import Profile from './Components/pages/Profile.js';
+import ViewPost from './Components/pages/ViewPost.js';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/view-post" element={<ViewPost />} />
+          <Route path="/view-post/:id" element={<ViewPost />} />
           <Route path="/post/:id" element={<ViewPost />} />
           <Route path="*" element={
             <div className="container mt-5">
