@@ -6,6 +6,10 @@ Taking a big inspiration from my years of Roblox game development, I wanted to c
 # Demonstration Video
 [https://www.youtube.com/watch?v=LPXEN1yuFec](https://www.youtube.com/watch?v=LPXEN1yuFec)
 
+
+# Features
+User can create a post, delete a post, comment on a post, view other post from other users, and more!
+
 # Project Diagrams
 
 
